@@ -36,5 +36,5 @@ EPRA-Stackelberg-Replication/
 ## Running Instructions
 1.Clone the code to your local computer;  
 2.Install the project dependencies (numpy, matplotlib);  
-3.Execute the command `python main.py` to run all experiments.  
+3.Execute the command `python _00_main.py` to run all experiments.  
 After running the algorithms, data related to edge pricing and resource allocation, as well as visual charts, will be generated—this facilitates comparing algorithm performance under different parameters.
