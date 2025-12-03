@@ -6,7 +6,7 @@
 """
 
 import math
-from 04_utils.02_network_params import B_UP_EDGE, B_DOWN_EDGE, B_UP_CLOUD, B_DOWN_CLOUD, P_TX, P_RX
+from _04_utils._02_network_params import B_UP_EDGE, B_DOWN_EDGE, B_UP_CLOUD, B_DOWN_CLOUD, P_TX, P_RX
 
 
 # ========== 基础通信时间 ==========
@@ -78,4 +78,5 @@ def cost_cloud(task, cloud):
         + task.wE * E_comm
         + task.wM * (cloud.mu_c * task.Cij)
     )
+
 
