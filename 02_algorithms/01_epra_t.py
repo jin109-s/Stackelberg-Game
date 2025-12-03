@@ -5,12 +5,12 @@ EPRA-T：任务级价格的 Stackelberg 定价方案
 """
 
 from typing import Dict, List, Tuple
-from models.user_device import UserDevice
-from models.edge_server import EdgeServer
-from models.cloud_server import CloudServer
-from models.task import Task
-from algorithms.uta_g import uta_g_single_user, era_allocation
-from utils.cost_functions import cost_local, cost_edge
+from 03_models.01_user_device import UserDevice
+from 03_models.02_edge_server import EdgeServer
+from 03_models.03_cloud_server import CloudServer
+from 03_models.00_task import Task
+from 02_algorithms.02_uta_g import uta_g_single_user, era_allocation
+from 04_utils.00_cost_functions import cost_local, cost_edge
 
 
 def epra_t(
@@ -62,3 +62,4 @@ def epra_t(
             best_mu_edge = mu_edge.copy()
 
     return best_mu_edge, best_revenue
+
