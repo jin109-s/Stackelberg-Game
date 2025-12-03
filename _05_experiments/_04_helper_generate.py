@@ -5,10 +5,10 @@
 """
 
 import random
-from 03_models.01_user_device import UserDevice
-from 03_models.00_task import Task
-from 03_models.02_edge_server import EdgeServer
-from 03_models.03_cloud_server import CloudServer
+from _03_models._01_user_device import UserDevice
+from _03_models._00_task import Task
+from _03_models._02_edge_server import EdgeServer
+from _03_models._03_cloud_server import CloudServer
 
 
 def generate_user(user_id, num_tasks, local_factor=1.0, input_scale=1.0):
@@ -43,5 +43,6 @@ def build_edge_cloud(edge_factor=1.0):
 
     cloud = CloudServer(2.4e9, 6e-12)
     return edge, cloud
+
 
 
