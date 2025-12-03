@@ -5,10 +5,10 @@ EPRA-U：统一价格的 Stackelberg 定价方案
 """
 
 from typing import List, Tuple
-from models.user_device import UserDevice
-from models.edge_server import EdgeServer
-from models.cloud_server import CloudServer
-from algorithms.uta_g import uta_g_single_user, era_allocation
+from 03_models.01_user_device import UserDevice
+from 03_models.02_edge_server import EdgeServer
+from 03_models.03_cloud_server import CloudServer
+from 02_algorithms.02_uta_g import uta_g_single_user, era_allocation
 
 
 def epra_u(
@@ -45,3 +45,4 @@ def epra_u(
             best_mu = mu
 
     return best_mu, best_revenue
+
