@@ -9,11 +9,11 @@ Baseline 对比算法：
 """
 
 import random
-from models.user_device import UserDevice
-from models.edge_server import EdgeServer
-from models.cloud_server import CloudServer
-from models.task import Task
-from utils.cost_functions import cost_local, cost_edge, cost_cloud
+from 03_models.01_user_device import UserDevice
+from 03_models.02_edge_server import EdgeServer
+from 03_models.03_cloud_server import CloudServer
+from 03_models.00_task import Task
+from 04_utils.00_cost_functions import cost_local, cost_edge, cost_cloud
 
 
 def baseline_local(user: UserDevice, edge: EdgeServer, cloud: CloudServer) -> float:
@@ -66,3 +66,4 @@ def baseline_random(user: UserDevice, edge: EdgeServer, cloud: CloudServer) -> f
     mu_baseline = 1e-11
     revenue = sum(mu_baseline * t.Cij for t in edge_tasks)
     return revenue
+
