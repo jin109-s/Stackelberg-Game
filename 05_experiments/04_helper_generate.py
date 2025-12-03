@@ -43,3 +43,4 @@ def build_edge_cloud(edge_factor=1.0):
 
     cloud = CloudServer(2.4e9, 6e-12)
     return edge, cloud
+
