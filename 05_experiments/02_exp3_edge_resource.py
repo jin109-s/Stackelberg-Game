@@ -4,11 +4,11 @@
 实验3：边缘服务器资源倍数 对 边缘收益 的影响
 """
 
-from algorithms.epra_u import epra_u
-from algorithms.epra_t import epra_t
-from algorithms.baseline import baseline_local, baseline_cloud, baseline_min_cost, baseline_random
-from utils.plot_utils import draw_six_lines
-from experiments.helper_generate import generate_user, build_edge_cloud
+from 02_algorithms.00_epra_u import epra_u
+from 02_algorithms.01_epra_t import epra_t
+from 02_algorithms.03_baseline import baseline_local, baseline_cloud, baseline_min_cost, baseline_random
+from 04_utils.01_plot_utils import draw_six_lines
+from 05_experiments.04_helper_generate import generate_user, build_edge_cloud
 
 
 def run_experiment_3():
@@ -55,3 +55,4 @@ def run_experiment_3():
         title="边缘资源对边缘收益的影响",
         filename="exp3_sixlines.png"
     )
+
