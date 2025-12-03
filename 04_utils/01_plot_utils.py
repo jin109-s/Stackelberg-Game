@@ -36,3 +36,4 @@ def draw_six_lines(x, EPRAU, EPRAT, Local, Cloud, MinCost, Random,
     plt.savefig(filename, dpi=200)
 
     print(f"图已保存：{filename}")
+
