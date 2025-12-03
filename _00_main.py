@@ -5,10 +5,10 @@ EPRA-Stackelberg-Replication
 一键运行全部四个实验的主程序
 """
 
-from 05_experiments.00_exp1_tasks import run_experiment_1
-from 05_experiments.01_exp2_local_resource import run_experiment_2
-from 05_experiments.02_exp3_edge_resource import run_experiment_3
-from 05_experiments.03_exp4_input_scale import run_experiment_4
+from _05_experiments._00_exp1_tasks import run_experiment_1
+from _05_experiments._01_exp2_local_resource import run_experiment_2
+from _05_experiments._02_exp3_edge_resource import run_experiment_3
+from _05_experiments._03_exp4_input_scale import run_experiment_4
 
 
 def main():
@@ -40,4 +40,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
