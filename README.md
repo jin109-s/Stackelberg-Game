@@ -1,40 +1,40 @@
 # Stackelberg-Game
-## 背景
-**移动边缘计算（mobile edge computing，MEC）** 作为一种新的计算范式出现，它能够同时利用本地设备和边缘服务器的计算能力。在MEC中，**边缘定价**和**资源分配（EPRA）** 是两个重要问题。边缘服务器通过向用户出售**计算服务**来盈利。为了实现收入最大化，他们需要为每个用户确定一个合适的价格，并决定分配给每个用户的资源数量。然而，现有的情况都没有考虑到用户的任务分配策略对边缘收益的影响。事实上，EPRA会影响用户的**任务卸载决策**，因为他们期望最小化他们的总成本。反过来，用户决策也会影响边缘的收益。因此，移动用户与边缘服务器之间的互动需要慎重考虑，同时实现双方利益最大化。  
-将双方的交互建模为**Stackelberg**。在给定EPRA策略的情况下，基于**贪心算法UTA-G**推导出每个用户的**近乎最优任务分配策略**，以最小化总成本。然后，运用**逆向归纳方法**，提出了**用户粒度EPRA（EPRA-U）** 和**任务粒度EPRA（EPRA-T）** 两种不同粒度的定价和资源分配方案，为边缘带来更高的收益。  
+## Background
+**Mobile Edge Computing (MEC)** emerges as a new computing paradigm that can leverage the computing capabilities of both local devices and edge servers simultaneously. In MEC,**Edge Pricing** and **Resource Allocation (EPRA)** are two critical issues. Edge servers generate profits by selling **computing services** to users. To maximize revenue, they need to determine an appropriate price for each user and decide the amount of resources allocated to each user. However, existing approaches fail to consider the impact of users' task allocation strategies on edge revenue. In fact, EPRA affects users' **task offloading decisions**, as users aim to minimize their total costs. Conversely, users' decisions also influence the edge's revenue. Therefore, the interaction between mobile users and edge servers needs to be carefully considered to maximize the benefits of both parties.
+The interaction between the two parties is modeled as a **Stackelberg game**. Given an EPRA strategy, a near-optimal task allocation strategy for each user is derived based on **the greedy algorithm UTA-G** to minimize the total cost. Then, using the backward induction method, two pricing and resource allocation schemes with different granularities—**User-Granularity EPRA (EPRA-U)** and **Task-Granularity EPRA (EPRA-T)**—are proposed to bring higher revenue to the edge.  
 
-## 代码目录结构:  
+## Code Directory Structure  
 
 EPRA-Stackelberg-Replication/  
 │  
 ├── models/  
-│   ├── **task.py（定义任务的数据模型）**  
-│   ├── **user_device.py（定义用户设备的数据模型）**  
-│   ├── **edge_server.py（定义边缘服务器的数据类型）**  
-│   └── **cloud_server.py（定义云服务器的数据模型）**  
+│   ├── **task.py（defines the data model for tasks）**  
+│   ├── **user_device.py（defines the data model for user devices）**  
+│   ├── **edge_server.py（defines the data type for edge servers）**  
+│   └── **cloud_server.py（defines the data model for cloud servers）**  
 │  
 ├── algorithms/  
-│   ├── **epra_u.py（实现EPRA-U算法）**  
-│   ├── **epra_t.py（实现EPRA-T算法）**  
-│   ├── **uta_g.py（实现UTA-G算法）**  
-│   └── **baseline.py（实现四种基线算法）**  
+│   ├── **epra_u.py（implements the EPRA-U algorithm）**  
+│   ├── **epra_t.py（implements the EPRA-T algorithm）**  
+│   ├── **uta_g.py（implements the UTA-G algorithm）**  
+│   └── **baseline.py（implements four baseline algorithms）**  
 │  
 ├── utils/  
-│   ├── **cost_functions.py（实现各类成本计算函数）**  
-│   ├── **plot_utils.py（提供绘图工具，用于生成实验结果的折线图）**  
-│   └── **network_params.py（定义系统的网络参数和物理常数）**  
+│   ├── **cost_functions.py（implements various cost calculation functions）**  
+│   ├── **plot_utils.py（provides plotting tools for generating line charts of experimental results）**  
+│   └── **network_params.py（defines the system's network parameters and physical constants）**  
 │  
 ├── experiments/  
-│   ├── **exp1_tasks.py（实现任务数量对边缘收益的影响实验）**  
-│   ├── **exp2_local_resource.py（实现本地资源系数对边缘收益的影响实验）**  
-│   ├── **exp3_edge_resource.py（实现边缘系统系数对边缘收益的影响实验）**  
-│   ├── **exp4_input_scale.py（实现输入数据大小对边缘收益的影响实验）**  
-│   └── **helper_generate.py（提供实验所需的辅助生成函数）**  
+│   ├── **exp1_tasks.py（implements the experiment on the impact of task quantity on edge revenue）**  
+│   ├── **exp2_local_resource.py（implements the experiment on the impact of local resource coefficients on edge revenue）**  
+│   ├── **exp3_edge_resource.py（implements the experiment on the impact of edge system coefficients on edge revenue）**  
+│   ├── **exp4_input_scale.py（implements the experiment on the impact of input data size on edge revenue）**  
+│   └── **helper_generate.py（provides auxiliary generation functions required for experiments）**  
 │  
-├── **main.py（程序入口文件，用于调用并执行所有实验）**  
+├── **main.py（the program entry file, used to call and execute all experiments）**  
 
-## 运行方式
-1.克隆代码到本地电脑；  
-2.安装项目依赖（numpy、matplotlib）；  
-3.执行命令`python main.py`运行所有实验。  
-运行算法后可生成边缘定价、资源分配相关的数据和可视化图表，便于对比不同参数下的算法表现。
+## Running Instructions
+1.Clone the code to your local computer;  
+2.Install the project dependencies (numpy, matplotlib);  
+3.Execute the command `python main.py` to run all experiments.  
+After running the algorithms, data related to edge pricing and resource allocation, as well as visual charts, will be generated—this facilitates comparing algorithm performance under different parameters.
